@@ -41,6 +41,10 @@ class SudokuGame
     pos
   end
 
+  def parse_pos(pos)
+    pos.chomp.split(",").map(&:to_i)
+  end
+
   def get_val
     val = nil
     until val && valid_val?(val)

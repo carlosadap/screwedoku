@@ -36,7 +36,7 @@ class Board
   end
 
   def columns
-    rows.transpose!
+    rows.transpose
   end
 
   def render
@@ -61,7 +61,7 @@ class Board
 
   def solved_set?(tiles)
     nums = tiles.map(&:value)
-    nums.sort == (1..9)
+    nums.sort == (1..9).to_a
   end
 
   def square(idx)
